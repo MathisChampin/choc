@@ -21,6 +21,7 @@ jobs:
     container:
       image: epitechcontent/epitest-docker:latest
     steps:
+      - name: check compil
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
