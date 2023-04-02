@@ -27,14 +27,14 @@ jobs:
       - name: Make
         run: make
         run: |
-        OIFS=$IFS
-        IFS=','
-        for -f in $EXECUTABLES
-        for -x in $EXECUTABLES
-        do
-        ./$fx
-        done
-        IFS=$OIFS
+          OIFS=$IFS
+          IFS=','
+          for -f in $EXECUTABLES
+          for -x in $EXECUTABLES
+          do
+          ./$fx
+          done
+          IFS=$OIFS
       timeout-minutes: 2
       - name: make clean
         run:  make clean
