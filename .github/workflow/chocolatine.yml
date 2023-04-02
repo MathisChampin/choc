@@ -1,4 +1,3 @@
-
 name: chocolatine
 
 on: [push, delete]
@@ -8,14 +7,14 @@ env:
 jobs:
   check_coding_style:
     runs-on: ubuntu-latest
-      steps:
-        - name: Check code
-          uses: actions/checkout@v3
-          with:
-            ref: ${{ github.head_ref }}
-        - name: Check coding style
-          run: |
-            docker run --rm -v $(pwd):/app ghcr.io/epitech/coding-style-checker:latest check.sh $(pwd) $(pwd)
+    steps:
+      - name: Check code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Check coding style
+        run: |
+          docker run --rm -v $(pwd):/app ghcr.io/epitech/coding-style-checker:latest check.sh $(pwd) $(pwd)
 
   check_program_compilation:
     runs-on: ubuntu-latest
