@@ -28,22 +28,12 @@ jobs:
     container:
       image: epitechcontent/epitest-docker:latest
     steps:
-      - name: check compil
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Make
         run: make
-        run: |
-          OIFS=$IFS
-          IFS=','
-          for -f in $EXECUTABLES
-          for -x in $EXECUTABLES
-          do
-          ./$fx
-          done
-          IFS=$OIFS
-      timeout-minutes: 2
+        timeout-minutes: 2
       - name: make clean
         run:  make clean
 
